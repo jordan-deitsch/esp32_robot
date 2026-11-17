@@ -20,17 +20,20 @@
 // ---------------------------------------------------------------------------
 // Pin assignments (avoid ESP32 strapping pins 0, 2, 12, 15 and flash pins 6-11)
 // ---------------------------------------------------------------------------
-// Unipolar stepper A -> ULN2003-style driver board IN1..IN4
-constexpr uint8_t UNI_A_IN1 = 4;
-constexpr uint8_t UNI_A_IN2 = 16;
-constexpr uint8_t UNI_A_IN3 = 17;
-constexpr uint8_t UNI_A_IN4 = 18;
+// I2C bus to the SX1509 GPIO expander (ESP32 default I2C pins).
+constexpr uint8_t  I2C_SDA_PIN  = 21;
+constexpr uint8_t  I2C_SCL_PIN  = 22;
+constexpr uint32_t I2C_CLOCK_HZ = 400000;   // SX1509 supports 400 kHz fast mode
 
-// Unipolar stepper B -> ULN2003-style driver board IN1..IN4
-// constexpr uint8_t UNI_B_IN1 = 21;
-// constexpr uint8_t UNI_B_IN2 = 22;
-// constexpr uint8_t UNI_B_IN3 = 23;
-// constexpr uint8_t UNI_B_IN4 = 25;
+// SX1509 address: 0x3E with ADDR0/ADDR1 jumpers both open (default).
+// 0x3F, 0x70, 0x71 for the other jumper combinations.
+constexpr uint8_t SX1509_I2C_ADDR = 0x3E;
+
+// Unipolar steppers -> ULN2003-style driver boards, driven from the SX1509.
+// Each motor uses 4 consecutive expander pins for IN1..IN4:
+//   motor 1: SX1509 pins 0-3    motor 2: pins 4-7
+//   motor 3: pins 8-11          motor 4: pins 12-15
+constexpr uint8_t UNI_COUNT = 4;   // 1-4; motors above this are not created
 
 // Bipolar stepper -> SparkFun Easy Driver
 constexpr uint8_t EASY_STEP_PIN   = 14;

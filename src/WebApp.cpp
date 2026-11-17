@@ -51,7 +51,7 @@ void WebApp::handle() { _server.handleClient(); }
 
 void WebApp::sendStatus() {
   String j;
-  j.reserve(512);
+  j.reserve(1024);
   j += "{\"steppers\":[";
   for (size_t i = 0; i < _count; i++) {
     StepperBase* s = _steppers[i];

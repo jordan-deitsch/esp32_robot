@@ -1,26 +1,21 @@
 #include "UnipolarStepper.h"
 
-// Half-step sequence for IN1..IN4
-static const uint8_t SEQ[8][4] = {
-    {1, 0, 0, 0}, {1, 1, 0, 0}, {0, 1, 0, 0}, {0, 1, 1, 0},
-    {0, 0, 1, 0}, {0, 0, 1, 1}, {0, 0, 0, 1}, {1, 0, 0, 1}};
+// Half-step sequence for IN1..IN4, packed as bit0 = IN1 ... bit3 = IN4.
+static const uint8_t SEQ[8] = {
+    0b0001, 0b0011, 0b0010, 0b0110,
+    0b0100, 0b1100, 0b1000, 0b1001};
 
-UnipolarStepper::UnipolarStepper(const char* name, uint8_t in1, uint8_t in2,
-                                 uint8_t in3, uint8_t in4,
-                                 uint16_t maxStepsPerSec)
-    : StepperBase(name, maxStepsPerSec) {
-  _pins[0] = in1; _pins[1] = in2; _pins[2] = in3; _pins[3] = in4;
-}
+UnipolarStepper::UnipolarStepper(const char* name, Sx1509& io,
+                                 uint8_t firstPin, uint16_t maxStepsPerSec)
+    : StepperBase(name, maxStepsPerSec), _io(io), _firstPin(firstPin) {}
 
 void UnipolarStepper::begin() {
-  for (uint8_t p : _pins) {
-    pinMode(p, OUTPUT);
-    digitalWrite(p, LOW);
-  }
+  // The expander itself is set up (all pins LOW outputs) in Sx1509::begin().
+  _io.writeNibble(_firstPin, 0);
 }
 
 void UnipolarStepper::writePhase() {
-  for (uint8_t i = 0; i < 4; i++) digitalWrite(_pins[i], SEQ[_phase][i]);
+  _io.writeNibble(_firstPin, SEQ[_phase]);
 }
 
 void UnipolarStepper::doStep(bool cw) {
@@ -30,5 +25,5 @@ void UnipolarStepper::doStep(bool cw) {
 
 void UnipolarStepper::energize(bool on) {
   if (on) writePhase();
-  else for (uint8_t p : _pins) digitalWrite(p, LOW);
+  else _io.writeNibble(_firstPin, 0);
 }
