@@ -10,7 +10,7 @@ Turn motors on and off from any browser on your network. Current hardware:
 
 The four unipolar motors share one SX1509 (16 outputs = 4 motors x IN1-IN4), so they only use the ESP32's two I2C pins instead of 16 GPIOs. Set `UNI_COUNT` in `config.h` if you have fewer than four connected.
 
-`hookup-diagram.svg` shows the older direct-GPIO wiring for the unipolar boards; for those, follow the pin map below instead.
+See `hookup-diagram.svg` (open it in a browser) for the full wiring.
 
 ## Files
 
