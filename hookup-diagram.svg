@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 800" font-family="Arial, Helvetica, sans-serif">
+<rect width="1100" height="800" fill="#ffffff"/>
+<text x="550" y="34" text-anchor="middle" font-size="22" font-weight="bold">ESP32 Robot - breadboard hookup</text>
+<rect x="430" y="60" width="200" height="560" rx="10" fill="#1f2937" stroke="#000" stroke-width="2"/>
+<text x="530" y="86" text-anchor="middle" font-size="16" fill="#fff" font-weight="bold">ESP32 DevKit</text>
+<text x="530" y="600" text-anchor="middle" font-size="12" fill="#d1d5db" font-weight="normal">powered separately via USB</text>
+<rect x="60" y="90" width="200" height="160" rx="10" fill="#e0f2fe" stroke="#374151" stroke-width="2"/>
+<text x="160" y="110" text-anchor="middle" font-size="13" fill="#111" font-weight="bold">ULN2003 driver board A</text>
+<text x="160" y="128" text-anchor="middle" font-size="11" fill="#444" font-weight="normal">(unipolar stepper #1)</text>
+<rect x="60" y="310" width="200" height="160" rx="10" fill="#dbeafe" stroke="#374151" stroke-width="2"/>
+<text x="160" y="330" text-anchor="middle" font-size="13" fill="#111" font-weight="bold">ULN2003 driver board B</text>
+<text x="160" y="348" text-anchor="middle" font-size="11" fill="#444" font-weight="normal">(unipolar stepper #2)</text>
+<line x1="260" y1="135" x2="430" y2="135" stroke="#f97316" stroke-width="3"/>
+<circle cx="260" cy="135" r="4.5" fill="#fbbf24" stroke="#333"/>
+<circle cx="430" cy="135" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="250" y="139" text-anchor="end" font-size="12" fill="#111" font-weight="normal">IN1</text>
+<text x="442" y="139" text-anchor="start" font-size="12" fill="#fff" font-weight="normal">GPIO16</text>
+<line x1="260" y1="165" x2="430" y2="165" stroke="#f97316" stroke-width="3"/>
+<circle cx="260" cy="165" r="4.5" fill="#fbbf24" stroke="#333"/>
+<circle cx="430" cy="165" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="250" y="169" text-anchor="end" font-size="12" fill="#111" font-weight="normal">IN2</text>
+<text x="442" y="169" text-anchor="start" font-size="12" fill="#fff" font-weight="normal">GPIO17</text>
+<line x1="260" y1="195" x2="430" y2="195" stroke="#f97316" stroke-width="3"/>
+<circle cx="260" cy="195" r="4.5" fill="#fbbf24" stroke="#333"/>
+<circle cx="430" cy="195" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="250" y="199" text-anchor="end" font-size="12" fill="#111" font-weight="normal">IN3</text>
+<text x="442" y="199" text-anchor="start" font-size="12" fill="#fff" font-weight="normal">GPIO18</text>
+<line x1="260" y1="225" x2="430" y2="225" stroke="#f97316" stroke-width="3"/>
+<circle cx="260" cy="225" r="4.5" fill="#fbbf24" stroke="#333"/>
+<circle cx="430" cy="225" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="250" y="229" text-anchor="end" font-size="12" fill="#111" font-weight="normal">IN4</text>
+<text x="442" y="229" text-anchor="start" font-size="12" fill="#fff" font-weight="normal">GPIO19</text>
+<line x1="260" y1="370" x2="430" y2="370" stroke="#2563eb" stroke-width="3"/>
+<circle cx="260" cy="370" r="4.5" fill="#fbbf24" stroke="#333"/>
+<circle cx="430" cy="370" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="250" y="374" text-anchor="end" font-size="12" fill="#111" font-weight="normal">IN1</text>
+<text x="442" y="374" text-anchor="start" font-size="12" fill="#fff" font-weight="normal">GPIO21</text>
+<line x1="260" y1="400" x2="430" y2="400" stroke="#2563eb" stroke-width="3"/>
+<circle cx="260" cy="400" r="4.5" fill="#fbbf24" stroke="#333"/>
+<circle cx="430" cy="400" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="250" y="404" text-anchor="end" font-size="12" fill="#111" font-weight="normal">IN2</text>
+<text x="442" y="404" text-anchor="start" font-size="12" fill="#fff" font-weight="normal">GPIO22</text>
+<line x1="260" y1="430" x2="430" y2="430" stroke="#2563eb" stroke-width="3"/>
+<circle cx="260" cy="430" r="4.5" fill="#fbbf24" stroke="#333"/>
+<circle cx="430" cy="430" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="250" y="434" text-anchor="end" font-size="12" fill="#111" font-weight="normal">IN3</text>
+<text x="442" y="434" text-anchor="start" font-size="12" fill="#fff" font-weight="normal">GPIO23</text>
+<line x1="260" y1="460" x2="430" y2="460" stroke="#2563eb" stroke-width="3"/>
+<circle cx="260" cy="460" r="4.5" fill="#fbbf24" stroke="#333"/>
+<circle cx="430" cy="460" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="250" y="464" text-anchor="end" font-size="12" fill="#111" font-weight="normal">IN4</text>
+<text x="442" y="464" text-anchor="start" font-size="12" fill="#fff" font-weight="normal">GPIO25</text>
+<line x1="115" y1="250" x2="115" y2="262" stroke="#dc2626" stroke-width="3"/>
+<circle cx="115" cy="250" r="4.5" fill="#fbbf24" stroke="#333"/>
+<rect x="80" y="262" width="70" height="18" rx="4" fill="#dc2626"/>
+<text x="115" y="275" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">+5V</text>
+<line x1="165" y1="250" x2="165" y2="262" stroke="#111111" stroke-width="3"/>
+<circle cx="165" cy="250" r="4.5" fill="#fbbf24" stroke="#333"/>
+<rect x="130" y="262" width="70" height="18" rx="4" fill="#111111"/>
+<text x="165" y="275" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">GND</text>
+<line x1="115" y1="470" x2="115" y2="482" stroke="#dc2626" stroke-width="3"/>
+<circle cx="115" cy="470" r="4.5" fill="#fbbf24" stroke="#333"/>
+<rect x="80" y="482" width="70" height="18" rx="4" fill="#dc2626"/>
+<text x="115" y="495" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">+5V</text>
+<line x1="165" y1="470" x2="165" y2="482" stroke="#111111" stroke-width="3"/>
+<circle cx="165" cy="470" r="4.5" fill="#fbbf24" stroke="#333"/>
+<rect x="130" y="482" width="70" height="18" rx="4" fill="#111111"/>
+<text x="165" y="495" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">GND</text>
+<text x="140" y="150" text-anchor="middle" font-size="11" fill="#555" font-weight="normal">5-pin motor</text>
+<text x="140" y="164" text-anchor="middle" font-size="11" fill="#555" font-weight="normal">plug -> 28BYJ-48</text>
+<rect x="780" y="90" width="260" height="250" rx="10" fill="#dcfce7" stroke="#374151" stroke-width="2"/>
+<text x="910" y="112" text-anchor="middle" font-size="14" fill="#111" font-weight="bold">SparkFun Easy Driver</text>
+<text x="910" y="128" text-anchor="middle" font-size="11" fill="#444" font-weight="normal">(bipolar stepper driver)</text>
+<line x1="630" y1="150" x2="780" y2="150" stroke="#16a34a" stroke-width="3"/>
+<circle cx="630" cy="150" r="4.5" fill="#fbbf24" stroke="#333"/>
+<circle cx="780" cy="150" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="618" y="154" text-anchor="end" font-size="12" fill="#fff" font-weight="normal">GPIO26</text>
+<text x="792" y="154" text-anchor="start" font-size="12" fill="#111" font-weight="normal">STEP</text>
+<line x1="630" y1="180" x2="780" y2="180" stroke="#16a34a" stroke-width="3"/>
+<circle cx="630" cy="180" r="4.5" fill="#fbbf24" stroke="#333"/>
+<circle cx="780" cy="180" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="618" y="184" text-anchor="end" font-size="12" fill="#fff" font-weight="normal">GPIO27</text>
+<text x="792" y="184" text-anchor="start" font-size="12" fill="#111" font-weight="normal">DIR</text>
+<line x1="630" y1="210" x2="780" y2="210" stroke="#16a34a" stroke-width="3"/>
+<circle cx="630" cy="210" r="4.5" fill="#fbbf24" stroke="#333"/>
+<circle cx="780" cy="210" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="618" y="214" text-anchor="end" font-size="12" fill="#fff" font-weight="normal">GPIO32</text>
+<text x="792" y="214" text-anchor="start" font-size="12" fill="#111" font-weight="normal">ENABLE</text>
+<line x1="630" y1="240" x2="780" y2="240" stroke="#111111" stroke-width="3"/>
+<circle cx="630" cy="240" r="4.5" fill="#fbbf24" stroke="#333"/>
+<circle cx="780" cy="240" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="618" y="244" text-anchor="end" font-size="12" fill="#fff" font-weight="normal">GND</text>
+<text x="792" y="244" text-anchor="start" font-size="12" fill="#111" font-weight="normal">GND</text>
+<circle cx="800" cy="340" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="800" y="328" text-anchor="middle" font-size="11" fill="#111" font-weight="normal">M+</text>
+<circle cx="880" cy="340" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="880" y="328" text-anchor="middle" font-size="11" fill="#111" font-weight="normal">GND</text>
+<circle cx="930" cy="340" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="930" y="328" text-anchor="middle" font-size="11" fill="#111" font-weight="normal">A</text>
+<circle cx="960" cy="340" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="960" y="328" text-anchor="middle" font-size="11" fill="#111" font-weight="normal">A</text>
+<circle cx="990" cy="340" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="990" y="328" text-anchor="middle" font-size="11" fill="#111" font-weight="normal">B</text>
+<circle cx="1020" cy="340" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="1020" y="328" text-anchor="middle" font-size="11" fill="#111" font-weight="normal">B</text>
+<line x1="800" y1="340" x2="800" y2="360" stroke="#ea580c" stroke-width="3"/>
+<rect x="765" y="360" width="70" height="18" rx="4" fill="#ea580c"/>
+<text x="800" y="373" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">VM 6-12V</text>
+<line x1="880" y1="340" x2="880" y2="360" stroke="#111111" stroke-width="3"/>
+<rect x="845" y="360" width="70" height="18" rx="4" fill="#111111"/>
+<text x="880" y="373" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">GND</text>
+<rect x="900" y="410" width="140" height="50" rx="8" fill="#fef3c7" stroke="#374151" stroke-width="2"/>
+<text x="970" y="432" text-anchor="middle" font-size="13" fill="#111" font-weight="bold">Bipolar stepper</text>
+<text x="970" y="449" text-anchor="middle" font-size="11" fill="#444" font-weight="normal">2 wires/coil</text>
+<line x1="930" y1="340" x2="930" y2="410" stroke="#111" stroke-width="3"/>
+<line x1="960" y1="340" x2="960" y2="410" stroke="#dc2626" stroke-width="3"/>
+<line x1="990" y1="340" x2="990" y2="410" stroke="#2563eb" stroke-width="3"/>
+<line x1="1020" y1="340" x2="1020" y2="410" stroke="#16a34a" stroke-width="3"/>
+<text x="915" y="396" text-anchor="middle" font-size="11" fill="#444" font-weight="normal">coil A</text>
+<text x="1005" y="396" text-anchor="middle" font-size="11" fill="#444" font-weight="normal">coil B</text>
+<rect x="780" y="500" width="260" height="130" rx="10" fill="#f3e8ff" stroke="#374151" stroke-width="2"/>
+<text x="910" y="522" text-anchor="middle" font-size="14" fill="#111" font-weight="bold">SparkFun hobby servo</text>
+<line x1="630" y1="560" x2="780" y2="560" stroke="#9333ea" stroke-width="3"/>
+<circle cx="630" cy="560" r="4.5" fill="#fbbf24" stroke="#333"/>
+<circle cx="780" cy="560" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="618" y="564" text-anchor="end" font-size="12" fill="#fff" font-weight="normal">GPIO33</text>
+<text x="792" y="564" text-anchor="start" font-size="12" fill="#111" font-weight="normal">SIG (orange/white)</text>
+<line x1="780" y1="590" x2="750" y2="590" stroke="#dc2626" stroke-width="3"/>
+<circle cx="780" cy="590" r="4.5" fill="#fbbf24" stroke="#333"/>
+<rect x="680" y="581" width="70" height="18" rx="4" fill="#dc2626"/>
+<text x="715" y="594" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">+5V ext</text>
+<text x="792" y="594" text-anchor="start" font-size="12" fill="#111" font-weight="normal">V+ (red)</text>
+<line x1="630" y1="610" x2="780" y2="610" stroke="#111111" stroke-width="3"/>
+<circle cx="630" cy="610" r="4.5" fill="#fbbf24" stroke="#333"/>
+<circle cx="780" cy="610" r="4.5" fill="#fbbf24" stroke="#333"/>
+<text x="618" y="614" text-anchor="end" font-size="12" fill="#fff" font-weight="normal">GND</text>
+<text x="792" y="614" text-anchor="start" font-size="12" fill="#111" font-weight="normal">GND (black/brown)</text>
+<rect x="60" y="660" width="980" height="125" rx="10" fill="#fefce8" stroke="#a16207" stroke-width="1.5"/>
+<text x="76" y="684" text-anchor="start" font-size="13" fill="#111" font-weight="bold">POWER NOTES  (tags with the same name are the same net - use the breadboard rails)</text>
+<text x="76" y="705" text-anchor="start" font-size="13" fill="#111" font-weight="normal">+5V (red)  : external 5 V supply, 2 A or more -> both ULN2003 boards and the servo V+. Do NOT connect it to the ESP32 5V/USB pin.</text>
+<text x="76" y="726" text-anchor="start" font-size="13" fill="#111" font-weight="normal">VM (orange): motor supply for the Easy Driver M+ (6-12 V typical, match your motor). Put a 100 uF capacitor across M+ and GND.</text>
+<text x="76" y="747" text-anchor="start" font-size="13" fill="#111" font-weight="normal">GND (black): ONE common ground: ESP32 GND, both ULN2003 boards, Easy Driver, servo, and the negative of every supply.</text>
+<text x="76" y="768" text-anchor="start" font-size="13" fill="#111" font-weight="normal">The ESP32 itself runs from USB. Wire coil pairs on the Easy Driver so each pair is one motor winding (see README).</text>
+</svg>
