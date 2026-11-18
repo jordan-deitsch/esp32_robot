@@ -91,8 +91,9 @@ A bipolar motor has two windings (4 wires). Find each pair with a multimeter (co
 On the page:
 
 - **Stepper cards**: tap the big button to start/stop, pick Clockwise or Counter-CW, drag the slider for speed (steps/s). The position counter shows steps taken since boot. Stopping de-energizes the coils so motors and drivers don't heat up (they will free-wheel, with no holding torque).
+- **Hold position (bipolar stepper only)**: a second button on the Easy Driver card. While the motor is stopped, tap it to switch between *HOLDING POSITION* (driver stays enabled, the shaft resists turning) and *FREE-WHEELING* (driver disabled, shaft turns freely). While running it is greyed out and shows what will happen at the next stop. Holding keeps full current in the coils, so the A3967 chip and motor get warm; set the current pot no higher than you need. Hold is off after a reset.
 - **Servo card**: tap *Enable* to start sending the signal (the servo moves to the last angle, 90 degrees at boot), then use the slider or 0/90/180 buttons. *Disable* releases the servo.
-- **STOP ALL**: stops all steppers and releases the servo.
+- **STOP ALL**: stops all steppers, turns off hold so every motor free-wheels, and releases the servo.
 
 Motors always start **off** after a reset.
 
@@ -105,10 +106,11 @@ All are `GET` and return the current status as JSON.
 | `/api/status` | read status |
 | `/api/stepper?id=0&run=1` | start (`run=0` stops); `id` 0-3 = unipolar 1-4, 4 = Easy Driver (with `UNI_COUNT` 4) |
 | `/api/stepper?id=4&dir=ccw` | direction `cw` / `ccw` |
+| `/api/stepper?id=4&hold=1` | hold position when stopped (`hold=0` free-wheels); Easy Driver only, ignored by unipolar motors |
 | `/api/stepper?id=1&speed=300` | steps per second (clamped to the motor's max) |
 | `/api/servo?angle=45` | set angle 0-180 |
 | `/api/servo?enabled=1` | enable (`0` disables) |
-| `/api/stopall` | stop everything |
+| `/api/stopall` | stop everything and release all holding motors |
 
 Parameters can be combined, e.g. `/api/stepper?id=0&dir=cw&speed=400&run=1`.
 

@@ -17,9 +17,19 @@ void StepperBase::setRunning(bool run) {
   if (run) {
     energize(true);
     _lastStepUs = micros();
-  } else {
-    energize(false);   // de-energize so the motor/driver doesn't sit hot
+  } else if (!_hold) {
+    energize(false);   // release so the motor/driver doesn't sit hot
   }
+  // else: stay energized to hold the current position
+}
+
+void StepperBase::setHold(bool hold) {
+  if (!supportsHold()) return;
+  if (hold == _hold) return;
+  _hold = hold;
+  // While running the coils are powered regardless; the setting takes
+  // effect at the next stop. While stopped, apply it immediately.
+  if (!_running) energize(hold);
 }
 
 void StepperBase::update() {

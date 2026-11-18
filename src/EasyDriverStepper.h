@@ -7,6 +7,7 @@ public:
   EasyDriverStepper(const char* name, uint8_t stepPin, uint8_t dirPin,
                     uint8_t enablePin, uint16_t maxStepsPerSec);
   void begin() override;
+  bool supportsHold() const override { return true; }
 
 protected:
   void doStep(bool cw) override;

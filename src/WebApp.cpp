@@ -59,6 +59,8 @@ void WebApp::sendStatus() {
     j += "{\"id\":";      j += i;
     j += ",\"name\":\"";  j += s->name();
     j += "\",\"running\":"; j += s->running() ? "true" : "false";
+    j += ",\"canHold\":"; j += s->supportsHold() ? "true" : "false";
+    j += ",\"hold\":";    j += s->hold() ? "true" : "false";
     j += ",\"cw\":";      j += s->clockwise() ? "true" : "false";
     j += ",\"speed\":";   j += s->speed();
     j += ",\"max\":";     j += s->maxSpeed();
@@ -85,6 +87,7 @@ void WebApp::handleStepper() {
   StepperBase* s = _steppers[id];
   if (_server.hasArg("speed")) s->setSpeed((uint16_t)constrain(_server.arg("speed").toInt(), 1, 65535));
   if (_server.hasArg("dir"))   s->setClockwise(_server.arg("dir") == "cw");
+  if (_server.hasArg("hold"))  s->setHold(_server.arg("hold") == "1");
   if (_server.hasArg("run"))   s->setRunning(_server.arg("run") == "1");
   sendStatus();
 }
@@ -96,7 +99,11 @@ void WebApp::handleServo() {
 }
 
 void WebApp::handleStopAll() {
-  for (size_t i = 0; i < _count; i++) _steppers[i]->setRunning(false);
+  // STOP ALL fully releases every motor, including ones set to hold.
+  for (size_t i = 0; i < _count; i++) {
+    _steppers[i]->setHold(false);
+    _steppers[i]->setRunning(false);
+  }
   _servo.setEnabled(false);
   sendStatus();
 }

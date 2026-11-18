@@ -18,6 +18,8 @@ static const char INDEX_HTML[] PROGMEM = R"rawliteral(<!DOCTYPE html>
  button.power{width:100%;font-weight:600;margin-bottom:10px}
  button.power.on{background:var(--on)}
  button.stop{background:#dc2626;font-weight:700}
+ button.power.hold{background:#d97706}
+ button:disabled{opacity:.55;cursor:default}
  .row{display:flex;gap:8px;margin-bottom:10px}
  .row button{flex:1}
  input[type=range]{width:100%;margin:6px 0 8px}
@@ -49,6 +51,7 @@ function build(){
     const d = document.createElement('div'); d.className='card';
     d.innerHTML = `<h2>${s.name}</h2>
       <button class="power" id="pw${s.id}"></button>
+      ${s.canHold ? `<button class="power" id="hd${s.id}"></button>` : ''}
       <div class="row"><button id="cw${s.id}">⟳ Clockwise</button><button id="ccw${s.id}">⟲ Counter-CW</button></div>
       <label>Speed: <b id="sv${s.id}"></b> steps/s</label>
       <input type="range" id="sp${s.id}" min="1" max="${s.max}">
@@ -56,6 +59,7 @@ function build(){
     $('steppers').appendChild(d);
     const cur = () => state.steppers[s.id];
     $('pw'+s.id).onclick  = () => api(`/api/stepper?id=${s.id}&run=${cur().running?0:1}`);
+    if(s.canHold) $('hd'+s.id).onclick = () => api(`/api/stepper?id=${s.id}&hold=${cur().hold?0:1}`);
     $('cw'+s.id).onclick  = () => api(`/api/stepper?id=${s.id}&dir=cw`);
     $('ccw'+s.id).onclick = () => api(`/api/stepper?id=${s.id}&dir=ccw`);
     $('sp'+s.id).oninput  = e => $('sv'+s.id).textContent = e.target.value;
@@ -83,6 +87,17 @@ function render(){
     const pw = $('pw'+s.id);
     pw.textContent = s.running ? 'RUNNING – tap to stop' : 'STOPPED – tap to start';
     pw.className = 'power' + (s.running ? ' on' : '');
+    if(s.canHold){
+      const hd = $('hd'+s.id);
+      hd.disabled = s.running;
+      if(s.running){
+        hd.textContent = s.hold ? 'Will HOLD position when stopped' : 'Will FREE-WHEEL when stopped';
+        hd.className = 'power';
+      }else{
+        hd.textContent = s.hold ? 'HOLDING POSITION – tap to release' : 'FREE-WHEELING – tap to hold position';
+        hd.className = 'power' + (s.hold ? ' hold' : '');
+      }
+    }
     $('cw'+s.id).className  = s.cw ? 'active' : '';
     $('ccw'+s.id).className = s.cw ? '' : 'active';
     $('ps'+s.id).textContent = s.pos;
