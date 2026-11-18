@@ -20,9 +20,9 @@
 // ---------------------------------------------------------------------------
 // Pin assignments (avoid ESP32 strapping pins 0, 2, 12, 15 and flash pins 6-11)
 // ---------------------------------------------------------------------------
-// I2C bus to the SX1509 GPIO expander (ESP32 default I2C pins).
-constexpr uint8_t  I2C_SDA_PIN  = 21;
-constexpr uint8_t  I2C_SCL_PIN  = 22;
+// I2C bus to the SX1509 GPIO expander (any free GPIOs work; ESP32 default is SDA 21 / SCL 22).
+constexpr uint8_t  I2C_SDA_PIN  = 22;
+constexpr uint8_t  I2C_SCL_PIN  = 23;
 constexpr uint32_t I2C_CLOCK_HZ = 400000;   // SX1509 supports 400 kHz fast mode
 
 // SX1509 address: 0x3E with ADDR0/ADDR1 jumpers both open (default).

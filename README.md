@@ -31,8 +31,8 @@ src/WebUI.h             the browser page (HTML/JS in flash)
 
 | Function | ESP32 GPIO | Connects to |
 |----------|-----------|-------------|
-| I2C SDA | 21 | SX1509 SDA |
-| I2C SCL | 22 | SX1509 SCL |
+| I2C SDA | 22 | SX1509 SDA |
+| I2C SCL | 23 | SX1509 SCL |
 | 3.3 V | 3V3 | SX1509 3.3V |
 | Easy Driver STEP | 14 | STEP |
 | Easy Driver DIR | 27 | DIR |
